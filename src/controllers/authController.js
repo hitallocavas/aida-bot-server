@@ -134,23 +134,20 @@ const router = express.Router();
                     //console.log(req.params.email)
                     console.log(prestadores)
                     var fulfillmentMessages = [];
-                    var fulfillmentText = new Object();
+                    var fulfillmentText = "";
 
                     prestadores.forEach(function(prestador){
 
-                        fulfillmentMessages.push({
-                            "fulfillmentText":prestador.name}
-                        )
+                        // fulfillmentMessages.push({
+                        //     "fulfillmentText":prestador.name}
+                        // )
+                        fulfillmentText += prestador.name +"/n";
+                    
                     })
                     
                     res.send({
-                        // "fulfillmentMessages":[ {
-                        //     "fulfillmentText": prestador.name
-                        // }, {
-                        //     "fulfillmentText": prestador.name
-                        // }
-                        // ]
-                        fulfillmentMessages
+                            "fulfillmentText": fulfillmentText
+                        //fulfillmentMessages
                     });
 
 
