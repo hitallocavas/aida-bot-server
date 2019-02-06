@@ -1,4 +1,5 @@
 const express = require('express');
+const os = require('os');
 
 const User = require('./../models/user');
 const Cliente = require('./../models/cliente');
@@ -135,20 +136,27 @@ const router = express.Router();
                     console.log(prestadores)
                     var fulfillmentMessages = [];
                     var fulfillmentText = "";
+                    var texts = [];
 
                     prestadores.forEach(function(prestador){
 
                         // fulfillmentMessages.push({
                         //     "fulfillmentText":prestador.name}
                         // )
-                        fulfillmentText += prestador.name +"\r\n";
-                    
+                        //  fulfillmentText += '{' + os.EOL + prestador.name + os.EOL + '}';
+                        texts.push(prestador.name);
                     })
-                    
-                    res.send({
-                            "fulfillmentText": fulfillmentText
-                        //fulfillmentMessages
-                    });
+
+                    res.send(
+                        
+                        {"fulfillmentMessages": [
+                            {
+                              "text": {
+                                "text": texts
+                              }
+                            }
+                          ]   }
+                    );
 
 
                     
