@@ -132,9 +132,27 @@ const router = express.Router();
             Prestador.find({profissional:req.body.queryResult.parameters.colaborador}).then(
                 prestadores => {
                     //console.log(req.params.email)
+                    console.log(prestadores)
+                    var fulfillmentMessages = [];
+                    var fulfillmentText = new Object();
+
+                    prestadores.forEach(function(prestador){
+
+                        fulfillmentMessages.push({
+                            "fulfillmentText":prestador.name}
+                        )
+                    })
+                    
                     res.send({
-                        "fulfillmentText": "Eu estava certo!!!"
-                      });
+                        // "fulfillmentMessages":[ {
+                        //     "fulfillmentText": prestador.name
+                        // }, {
+                        //     "fulfillmentText": prestador.name
+                        // }
+                        // ]
+                        fulfillmentMessages
+                    });
+
 
                     
                 }
