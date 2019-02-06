@@ -133,22 +133,7 @@ const router = express.Router();
                 prestadores => {
                     //console.log(req.params.email)
                     res.send({
-                        "fulfillmentText": "Eu estava certo!!!",
-                        "fulfillmentMessages": [
-                          {
-                            "card": {
-                              "title": "Eu estava certo!!!",
-                              "subtitle": "card text",
-                              "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
-                              "buttons": [
-                                {
-                                  "text": "button text",
-                                  "postback": "https://assistant.google.com/"
-                                }
-                              ]
-                            }
-                          }
-                        ]
+                        "fulfillmentText": "Eu estava certo!!!"
                       });
 
                     
