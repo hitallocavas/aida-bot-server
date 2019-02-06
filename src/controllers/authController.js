@@ -133,21 +133,20 @@ const router = express.Router();
                 prestadores => {
                     //console.log(req.params.email)
                     console.log(prestadores)
-                    var fulfillmentMessages = [];
+                    var messages = [];
                     var fulfillmentText = "";
 
                     prestadores.forEach(function(prestador){
-
-                        // fulfillmentMessages.push({
-                        //     "fulfillmentText":prestador.name}
-                        // )
-                        fulfillmentText += prestador.name +"/n";
+                        // fulfillmentText += prestador.name +"/n";
+                        messages.push({
+                            "speech": prestador.name,
+                            "type": 0
+                        })
                     
                     })
                     
                     res.send({
-                            "fulfillmentText": fulfillmentText
-                        //fulfillmentMessages
+                            "messages": messages  
                     });
 
 
