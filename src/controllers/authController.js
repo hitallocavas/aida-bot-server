@@ -137,7 +137,7 @@ const router = express.Router();
                         "fulfillmentMessages": [
                           {
                             "card": {
-                              "title": "card title",
+                              "title": "Eu estava certo!!!",
                               "subtitle": "card text",
                               "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
                               "buttons": [
