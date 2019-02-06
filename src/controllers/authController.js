@@ -125,5 +125,41 @@ const router = express.Router();
 
      //FIM DEMONSTRAÇÃO USUARIO
 
+     //teste dialogflow
+
+    router.post("/searchforcolaborators", async(req,res)=>{
+        try{
+            Prestador.find({profissional:req.body.queryResult.parameters.colaborador}).then(
+                prestadores => {
+                    //console.log(req.params.email)
+                    res.send({
+                        "fulfillmentText": "Eu estava certo!!!",
+                        "fulfillmentMessages": [
+                          {
+                            "card": {
+                              "title": "card title",
+                              "subtitle": "card text",
+                              "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+                              "buttons": [
+                                {
+                                  "text": "button text",
+                                  "postback": "https://assistant.google.com/"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      });
+
+                    
+                }
+            )
+        }
+        catch(err){
+            return res.status(400).send({err});   
+        }
+        
+    });
+
 
 module.exports = app => app.use('/auth', router);
