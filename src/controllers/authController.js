@@ -150,7 +150,7 @@ const router = express.Router();
                         {"fulfillmentMessages": [
                             {
                                 "text": {
-                                    "text": [texts]
+                                    "text": texts
                                 }
                             },
                             {
