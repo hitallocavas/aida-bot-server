@@ -134,9 +134,9 @@ const router = express.Router();
                 
                     var texts = [];
 
-                    if(prestadores.length==0){
+                    if(prestadores.length==0 ){
                         res.send({
-                            "fulfillmentText": "Infelismente não há registros de " + req.body.queryResult.parameters.colaborador+ " em nosso banco de dados"
+                            "fulfillmentText": "Infelizmente não há registros de " + req.body.queryResult.parameters.colaborador+ " em nosso banco de dados"
                         }
                         )
                     }
@@ -149,6 +149,9 @@ const router = express.Router();
                         
                         {"fulfillmentMessages": [
                             {
+                              "text": {
+                                "text": "Aguarde um momento, estou procurando o melhor "+req.body.queryResult.parameters.colaborador+" para você"
+                              },
                               "text": {
                                 "text": texts
                               }
