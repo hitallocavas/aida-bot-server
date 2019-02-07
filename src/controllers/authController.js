@@ -132,8 +132,14 @@ const router = express.Router();
             Prestador.find({profissional:req.body.queryResult.parameters.colaborador}).then(
                 prestadores => {
                 
-                    //console.log(prestadores)
                     var texts = [];
+
+                    if(prestadores.length==0){
+                        res.send({
+                            "fulfillmentText": "Infelismente não há registros de " + req.body.queryResult.parameters.colaborador+ " em nosso banco de dados".
+                        }
+                        )
+                    }
 
                     prestadores.forEach(function(prestador){
                         texts.push(prestador.name + " " + prestador.UrlPerfil);
