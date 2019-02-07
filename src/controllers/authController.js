@@ -132,7 +132,7 @@ const router = express.Router();
             Prestador.find({profissional:req.body.queryResult.parameters.colaborador}).then(
                 prestadores => {
                 
-                  //  var texts = [];
+                    var texts = [];
 
                     if(prestadores.length==0 ){
                         res.send({
@@ -141,27 +141,19 @@ const router = express.Router();
                         )
                     }
 
-                  //  prestadores.forEach(function(prestador){
-                  //      texts.push(prestador.name + " " + prestador.UrlPerfil);
-                  //  })
+                    prestadores.forEach(function(prestador){
+                        texts.push(prestador.name + " " + prestador.UrlPerfil);
+                    })
 
                     res.send(
                         
                         {"fulfillmentMessages": [
                             {
-                              "card": {
-                                "title": prestador.name,
-                                "subtitle": prestador.profissional,
-                                "imageUri": prestador.UrlPerfil,
-                                "buttons": [
-                                  {
-                                    "text": "Ir para perfil do prestador",
-                                    "postback": prestador.UrlPerfil
-                                  }
-                                ]
+                              "text": {
+                                "text": texts
                               }
                             }
-                          ]  
+                          ]   
                         }
                     );
    
@@ -176,7 +168,3 @@ const router = express.Router();
 
 
 module.exports = app => app.use('/auth', router);
-
-
-
-
