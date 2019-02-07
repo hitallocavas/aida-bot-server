@@ -150,14 +150,10 @@ const router = express.Router();
                         {"fulfillmentMessages": [
                             {
                               "text": {
-                                "text": "Aguarde um momento, estou procurando o melhor "+req.body.queryResult.parameters.colaborador+" para você"
+                                "text": "Aguarde um momento, estou procurando o melhor "+req.body.queryResult.parameters.colaborador+" para você",
+                                "text": texts
                               }
-                            }, 
-                            {
-                                "text": {
-                                  "text": texts
-                                }
-                              }
+                            }
                           ]   
                         }
                     );
