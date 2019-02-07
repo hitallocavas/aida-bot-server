@@ -151,11 +151,13 @@ const router = express.Router();
                             {
                               "text": {
                                 "text": "Aguarde um momento, estou procurando o melhor "+req.body.queryResult.parameters.colaborador+" para você"
-                              },
-                              "text": {
-                                "text": texts
                               }
-                            }
+                            }, 
+                            {
+                                "text": {
+                                  "text": texts
+                                }
+                              }
                           ]   
                         }
                     );
@@ -171,3 +173,7 @@ const router = express.Router();
 
 
 module.exports = app => app.use('/auth', router);
+
+
+
+
