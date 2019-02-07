@@ -149,12 +149,19 @@ const router = express.Router();
                         
                         {"fulfillmentMessages": [
                             {
-                              "text": {
-                                "text": "Aguarde um momento, estou procurando o melhor "+req.body.queryResult.parameters.colaborador+" para você",
-                                "text": texts
+                              "card": {
+                                "title": "card title",
+                                "subtitle": "card text",
+                                "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+                                "buttons": [
+                                  {
+                                    "text": "button text",
+                                    "postback": "https://assistant.google.com/"
+                                  }
+                                ]
                               }
                             }
-                          ]   
+                          ]  
                         }
                     );
    
