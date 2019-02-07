@@ -136,7 +136,7 @@ const router = express.Router();
                     var texts = [];
 
                     prestadores.forEach(function(prestador){
-                        texts.push(prestador.name);
+                        texts.push(prestador.name + " " + prestador.UrlPerfil);
                     })
 
                     res.send(
