@@ -54,7 +54,11 @@ const PrestadorSchema = new mongoose.Schema({
         require: false,
     },
     comentarios_clientes: {
-        type: Number,
+        type: String,
+        require: false,
+    },
+    UrlPerfil: {
+        type: String,
         require: false,
     }
 });
