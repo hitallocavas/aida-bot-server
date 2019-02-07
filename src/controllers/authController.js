@@ -129,7 +129,7 @@ const router = express.Router();
 
     router.post("/searchforcolaborators", async(req,res)=>{
         try{
-            Prestador.findOne({profissional:req.body.queryResult.parameters.colaborador}).then(
+            Prestador.find({profissional:req.body.queryResult.parameters.colaborador}).then(
                 prestadores => {
                 
                   //  var texts = [];
