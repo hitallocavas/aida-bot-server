@@ -157,7 +157,7 @@ const router = express.Router();
                             },
                             {
                                 "text": {
-                                    "text": ["Aqui estão os "+req.body.queryResult.parameters.colaborador+"que você pediu. Se precisar de mais alguma coisa, me avise."]
+                                    "text": ["Aqui estão os "+req.body.queryResult.parameters.colaborador+"s que você pediu. Se precisar de mais alguma coisa, me avise."]
                                 }
                             }
                           ]   
