@@ -145,6 +145,8 @@ const router = express.Router();
                         texts.push(prestador.name + " " + prestador.UrlPerfil);
                     })
 
+                    //enviar mensagens
+
                     res.send(
                         
                         {"fulfillmentMessages": [
