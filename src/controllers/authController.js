@@ -135,7 +135,7 @@ const router = express.Router();
             //var tipo = ""+{profissional:req.body.queryResult.outputContexts[0].parameters.colaborador};
            // tipo = tipo.charAt(0).toUpperCase() + tipo.slice(1);
 
-            Prestador.find(tipo).then(
+            Prestador.find({profissional:req.body.queryResult.outputContexts[0].parameters.colaborador}).then(
                 prestadores => {                   
                 
                     var texts = [];
