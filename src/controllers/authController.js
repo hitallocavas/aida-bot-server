@@ -142,7 +142,7 @@ const router = express.Router();
                     }
 
                     prestadores.forEach(function(prestador){
-                        texts.push(prestador.name + "\n" + prestador.UrlPerfil);
+                        texts.push("Nome:"+prestador.name + "\n" +"Perfil:"+prestador.UrlPerfil);
                     })
 
                     //enviar mensagens
