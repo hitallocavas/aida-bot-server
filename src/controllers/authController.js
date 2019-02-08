@@ -152,6 +152,11 @@ const router = express.Router();
                         {"fulfillmentMessages": [
                             {
                                 "text": {
+                                    "text": ["Aguarde um momento, estamos procurando os melhores "+req.body.queryResult.parameters.colaborador+"s pra você."]
+                                }
+                            },
+                            {
+                                "text": {
                                     "text": texts
                                 }
                             },
