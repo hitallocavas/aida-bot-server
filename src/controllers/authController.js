@@ -156,6 +156,19 @@ const router = express.Router();
                                 }
                             },
                             {
+                                "card": {
+                                  "title": "Joazino",
+                                  "subtitle": "pedreiro",
+                                  "imageUri": "http:www.aida.com/",
+                                  "buttons": [
+                                    {
+                                      "text": "ver perfil"
+                                    }
+                                  ]
+                                },
+                                "platform": "TELEGRAM"
+                              },
+                            {
                                 "text": {
                                     "text": texts
                                 }
