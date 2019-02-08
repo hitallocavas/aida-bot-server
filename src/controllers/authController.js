@@ -165,7 +165,8 @@ const router = express.Router();
                                       "text": "ver perfil"
                                     }
                                   ]
-                                }
+                                },
+                                "platform": "TELEGRAM"
                               },
                             {
                                 "text": {
