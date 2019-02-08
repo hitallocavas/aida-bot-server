@@ -155,7 +155,7 @@ const router = express.Router();
                         {"fulfillmentMessages": [
                             {
                                 "text": {
-                                    "text": ["Aguarde um momento, estamos procurando os melhores "+req.body.queryResult.outputContexts[0].parameters.colaborador+"s pra você."]
+                                    "text": ["Aguarde um momento, estamos procurando os melhores prestadores pra você."]
                                 }
                             },
                             {
@@ -165,7 +165,7 @@ const router = express.Router();
                             },
                             {
                                 "text": {
-                                    "text": ["Aqui estão os "+req.body.queryResult.outputContexts[0].parameters.colaborador+"s que você pediu. Se precisar de mais alguma coisa, me avise."]
+                                    "text": ["Aqui estão os prestadores que você pediu. Se precisar de mais alguma coisa, me avise."]
                                 }
                             }
                           ]   
