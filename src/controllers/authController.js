@@ -127,7 +127,7 @@ const router = express.Router();
 
      //teste dialogflow
 
-    router.post("/searchforcolaborators", async(req,res)=>{
+    router.post("/webhook", async(req,res)=>{
         try{
             Prestador.find({profissional:req.body.queryResult.outputContexts.parameters.colaborador}).then(
                 prestadores => {
