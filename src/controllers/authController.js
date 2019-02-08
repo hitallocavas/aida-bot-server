@@ -129,14 +129,14 @@ const router = express.Router();
 
     router.post("/searchforcolaborators", async(req,res)=>{
         try{
-            Prestador.find({profissional:req.body.outputContexts.parameters.colaborador}).then(
+            Prestador.find({profissional:req.body.queryResult.outputContexts.parameters.colaborador}).then(
                 prestadores => {
                 
                     var texts = [];
 
                     if(prestadores.length==0 ){
                         res.send({
-                            "fulfillmentText": "Infelizmente não há registros de " + req.body.outputContexts.parameters.colaborador+ " em nosso banco de dados"
+                            "fulfillmentText": "Infelizmente não há registros de " + req.body.queryResult.outputContexts.parameters.colaborador+ " em nosso banco de dados"
                         }
                         )
                     }
@@ -152,7 +152,7 @@ const router = express.Router();
                         {"fulfillmentMessages": [
                             {
                                 "text": {
-                                    "text": ["Aguarde um momento, estamos procurando os melhores "+req.body.outputContexts.parameters.colaborador+"s pra você."]
+                                    "text": ["Aguarde um momento, estamos procurando os melhores "+req.body.queryResult.outputContexts.parameters.colaborador+"s pra você."]
                                 }
                             },
                             {
@@ -162,7 +162,7 @@ const router = express.Router();
                             },
                             {
                                 "text": {
-                                    "text": ["Aqui estão os "+req.body.queryResult.parameters.colaborador+"s que você pediu. Se precisar de mais alguma coisa, me avise."]
+                                    "text": ["Aqui estão os "+req.body.queryResult.outputContexts.parameters.colaborador+"s que você pediu. Se precisar de mais alguma coisa, me avise."]
                                 }
                             }
                           ]   
