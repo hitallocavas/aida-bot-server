@@ -132,8 +132,9 @@ const router = express.Router();
         console.log(req.body.queryResult.outputContexts[0].parameters.colaborador)
       
         try{
-            var tipo = ""+{profissional:req.body.queryResult.outputContexts[0].parameters.colaborador};
-            tipo = tipo.charAt(0) + tipo.slice(1);
+            //var tipo = ""+{profissional:req.body.queryResult.outputContexts[0].parameters.colaborador};
+           // tipo = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+
             Prestador.find(tipo).then(
                 prestadores => {                   
                 
