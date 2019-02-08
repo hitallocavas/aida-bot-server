@@ -152,12 +152,12 @@ const router = express.Router();
                         {"fulfillmentMessages": [
                             {
                                 "text": {
-                                    "text": ["Estamos procurando os melhores " + prestador.profissional+"  pra você"]
+                                    "text": texts
                                 }
                             },
                             {
                                 "text": {
-                                    "text": texts
+                                    "text": ["dskljdhsdfjhsdkfdshfsdk"]
                                 }
                             }
                           ]   
