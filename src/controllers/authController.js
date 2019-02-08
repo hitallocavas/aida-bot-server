@@ -157,22 +157,16 @@ const router = express.Router();
                             },
                             {
                                 "card": {
-                                  "title": "Joazino",
+                                  "title": "ricardo",
                                   "subtitle": "pedreiro",
-                                  "imageUri": "http:www.aida.com/",
+                                  "imageUri": "http:www.aida.com",
                                   "buttons": [
                                     {
                                       "text": "ver perfil"
                                     }
                                   ]
-                                },
-                                "platform": "TELEGRAM"
-                              },
-                            {
-                                "text": {
-                                    "text": texts
                                 }
-                            },
+                              }
                             {
                                 "text": {
                                     "text": ["Aqui estão os "+req.body.queryResult.parameters.colaborador+"s que você pediu. Se precisar de mais alguma coisa, me avise."]
