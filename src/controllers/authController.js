@@ -136,7 +136,7 @@ const router = express.Router();
 
                     if(prestadores.length==0 ){
                         res.send({
-                            "fulfillmentText": "Infelizmente não há registros de " + req.body.queryResult.parameters.colaborador+ " em nosso banco de dados"
+                            "fulfillmentText": "Infelizmente não há registros de " + req.body.outputContexts.parameters.colaborador+ "com a especialidade "+req.body.queryResult.parameters.colaborador+ " em nosso banco de dados"
                         }
                         )
                     }
