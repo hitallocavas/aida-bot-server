@@ -128,9 +128,11 @@ const router = express.Router();
      //teste dialogflow
 
     router.post("/webhook", async(req,res)=>{
-        console.log(req.body.queryResult.outputContexts[parameters.colaborador])
+
+        console.log(req.body.queryResult.outputContexts[0].parameters.colaborador)
+      
         try{
-            Prestador.find({profissional:req.body.queryResult.outputContexts[parameters.colaborador]}).then(
+            Prestador.find({profissional:req.body.queryResult.outputContexts[0].parameters.colaborador}).then(
                 prestadores => {
 
                     
@@ -139,7 +141,7 @@ const router = express.Router();
 
                     if(prestadores.length==0 ){
                         res.send({
-                            "fulfillmentText": "Infelizmente não há registros de " + req.body.queryResult.outputContexts.parameters.colaborador+ " em nosso banco de dados"
+                            "fulfillmentText": "Infelizmente não há registros de " + req.body.queryResult.outputContexts[0].parameters.colaborador+ " em nosso banco de dados"
                         }
                         )
                     }
@@ -155,7 +157,7 @@ const router = express.Router();
                         {"fulfillmentMessages": [
                             {
                                 "text": {
-                                    "text": ["Aguarde um momento, estamos procurando os melhores "+req.body.queryResult.outputContexts.parameters.colaborador+"s pra você."]
+                                    "text": ["Aguarde um momento, estamos procurando os melhores "+req.body.queryResult.outputContexts[0].parameters.colaborador+"s pra você."]
                                 }
                             },
                             {
@@ -165,7 +167,7 @@ const router = express.Router();
                             },
                             {
                                 "text": {
-                                    "text": ["Aqui estão os "+req.body.queryResult.outputContexts.parameters.colaborador+"s que você pediu. Se precisar de mais alguma coisa, me avise."]
+                                    "text": ["Aqui estão os "+req.body.queryResult.outputContexts[0].parameters.colaborador+"s que você pediu. Se precisar de mais alguma coisa, me avise."]
                                 }
                             }
                           ]   
