@@ -124,13 +124,13 @@ const router = express.Router();
      });
 
      //FIM DEMONSTRAÇÃO USUARIO
-
+    
      //teste dialogflow
 
     router.post("/webhook", async(req,res)=>{
 
-        console.log(req.body.queryResult.outputContexts[0].parameters.colaborador)
-      
+       if(req.body.queryResult.intent.displayName=="busca-colaboradores - especialidade"){  // busca por colaboradores 
+
         try{
             Prestador.find({profissional:req.body.queryResult.outputContexts[0].parameters.colaborador}).then(
                 prestadores => {
@@ -145,7 +145,7 @@ const router = express.Router();
                     }
 
                     prestadores.forEach(function(prestador){
-                        texts.push("Nome: "+prestador.name + "\n" +"Perfil: "+prestador.UrlPerfil+"\n" +"Contato: "+prestador.telefone);
+                        texts.push("Nome: "+prestador.name + "\n" +"Portfólio: "+prestador.UrlPerfil+"\n" +"Contato: "+prestador.telefone);
                     })
 
                     //enviar mensagens
@@ -178,6 +178,18 @@ const router = express.Router();
         catch(err){
             return res.status(400).send({err});   
         }
+
+       }else if(req.body.queryResult.intent.displayName=="Obra-feita-avaliacao - yes - select.number"){
+
+
+        queryResult.parameters.number[0]
+
+
+       }else if(null){
+
+       }
+      
+       
         
     });
 

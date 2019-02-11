@@ -60,10 +60,12 @@ const PrestadorSchema = new mongoose.Schema({
     UrlPerfil: {
         type: String,
         require: false,
+    },
+    Especialidades: {
+        type: [String] ,
+        require: false,
     }
 });
-
-
 
 // UserSchema.pre('save', async function (next) {
 
