@@ -145,7 +145,7 @@ const router = express.Router();
                     }
 
                     prestadores.forEach(function(prestador){
-                        texts.push("Nome: "+prestador.name + "\n" +"Portfólio: "+prestador.UrlPerfil+"\n" +"Contato: "+prestador.telefone);
+                        texts.push(bold("Nome: ")+prestador.name + "\n" +bold("Portfólio: ")+prestador.UrlPerfil+"\n" +bold("Contato: ")+prestador.telefone);
                     })
 
                     //enviar mensagens
@@ -167,11 +167,10 @@ const router = express.Router();
                             },
                            {
                                 "text": {
-                                    "text": ["Aqui estão os prestadores que você pediu. Se precisar de mais alguma coisa, me avise.","sjajsahsaa"]
+                                    "text": ["Aqui estão os prestadores que você pediu. Se precisar de mais alguma coisa, me avise."]
                                 }
                              }
                            ]  
-                          
                           
                         }
                     );
@@ -185,8 +184,6 @@ const router = express.Router();
         }
 
        }else if(req.body.queryResult.intent.displayName=="Obra-feita-avaliacao - yes - select.number"){
-
-        //mocado
 
 
         //queryResult.parameters.number[0]
