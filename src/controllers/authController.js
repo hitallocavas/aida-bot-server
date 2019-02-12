@@ -153,7 +153,58 @@ const router = express.Router();
                     res.send(
                         
                         {
-                        //     "fulfillmentMessages": [
+                            "fulfillmentMessages": [
+                                {
+                                  "text": {
+                                    "text": [
+                                      texts
+                                    ]
+                                  },
+                                  "platform": "TELEGRAM"
+                                },
+                                {
+                                  "text": {
+                                    "text": [
+                                      "gfgdfgdfgdfg"
+                                    ]
+                                  },
+                                  "platform": "TELEGRAM"
+                                },
+                                {
+                                  "card": {
+                                    "title": "fd",
+                                    "subtitle": "fgf",
+                                    "imageUri": "fgf",
+                                    "buttons": [
+                                      {
+                                        "text": "fggf"
+                                      }
+                                    ]
+                                  },
+                                  "platform": "TELEGRAM"
+                                },
+                                {
+                                  "card": {
+                                    "title": "dd",
+                                    "subtitle": "ss",
+                                    "imageUri": "dffd",
+                                    "buttons": [
+                                      {
+                                        "text": "ssaa"
+                                      }
+                                    ]
+                                  },
+                                  "platform": "TELEGRAM"
+                                },
+                                {
+                                  "text": {
+                                    "text": [
+                                      ""
+                                    ]
+                                  }
+                                }
+                              ]
+                        //     [
                         //     {
                         //         "text": {
                         //             "text": ["Aguarde um momento, estamos procurando os melhores prestadores pra você."]
@@ -171,58 +222,6 @@ const router = express.Router();
                         //     }
                         //   ]  
                           
-
-                        [
-                            {
-                              "text": {
-                                "text": [
-                                  texts
-                                ]
-                              },
-                              "platform": "TELEGRAM"
-                            },
-                            {
-                              "text": {
-                                "text": [
-                                  "gfgdfgdfgdfg"
-                                ]
-                              },
-                              "platform": "TELEGRAM"
-                            },
-                            {
-                              "card": {
-                                "title": "fd",
-                                "subtitle": "fgf",
-                                "imageUri": "fgf",
-                                "buttons": [
-                                  {
-                                    "text": "fggf"
-                                  }
-                                ]
-                              },
-                              "platform": "TELEGRAM"
-                            },
-                            {
-                              "card": {
-                                "title": "dd",
-                                "subtitle": "ss",
-                                "imageUri": "dffd",
-                                "buttons": [
-                                  {
-                                    "text": "ssaa"
-                                  }
-                                ]
-                              },
-                              "platform": "TELEGRAM"
-                            },
-                            {
-                              "text": {
-                                "text": [
-                                  ""
-                                ]
-                              }
-                            }
-                          ]
                           
                         }
                     );
