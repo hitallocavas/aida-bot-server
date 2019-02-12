@@ -145,7 +145,7 @@ const router = express.Router();
                     }
 
                     prestadores.forEach(function(prestador){
-                        texts.push("Nome: "+prestador.name + "\n" +"Portfólio: "+prestador.UrlPerfil+"\n" +"Contato: "+prestador.telefone);
+                        texts.push({"nome": prestador.name, "funcao": prestador.profissional, "portfolio": prestador.UrlPerfil, "contato": prestador.telefone});
                     })
 
                     //enviar mensagens
@@ -156,25 +156,15 @@ const router = express.Router();
                             "fulfillmentMessages": [
                                 {
                                   "text": {
-                                    "text": [
-                                      texts
-                                    ]
-                                  },
-                                  "platform": "TELEGRAM"
-                                },
-                                {
-                                  "text": {
-                                    "text": [
-                                      "gfgdfgdfgdfg"
-                                    ]
+                                    "text": ["Aguarde um momento, estamos procurando os melhores prestadores pra você."]
                                   },
                                   "platform": "TELEGRAM"
                                 },
                                 {
                                   "card": {
-                                    "title": "fd",
-                                    "subtitle": "fgf",
-                                    "imageUri": "fgf",
+                                    "title": texts[0].Nome,
+                                    "subtitle": texts[0].funcao,
+                                    "imageUri": texts[0].url,
                                     "buttons": [
                                       {
                                         "text": "fggf"
