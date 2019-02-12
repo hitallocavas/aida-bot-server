@@ -61,7 +61,7 @@ const PrestadorSchema = new mongoose.Schema({
         type: String,
         require: false,
     },
-    Especialidades: {
+    especialidades: {
         type: [String] ,
         require: false,
     }

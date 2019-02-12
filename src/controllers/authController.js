@@ -145,7 +145,7 @@ const router = express.Router();
                     }
 
                     prestadores.forEach(function(prestador){
-                        texts.push({"nome": prestador.name, "funcao": prestador.profissional, "portfolio": prestador.UrlPerfil, "contato": prestador.telefone});
+                        texts.push("Nome: "+prestador.name + "\n" +"Portfólio: "+prestador.UrlPerfil+"\n" +"Contato: "+prestador.telefone);
                     })
 
                     //enviar mensagens
@@ -153,64 +153,24 @@ const router = express.Router();
                     res.send(
                         
                         {
-                            "fulfillmentMessages": [
-                                {
-                                  "text": {
-                                    "text": ["Aguarde um momento, estamos procurando os melhores prestadores pra você."]
-                                  },
-                                  "platform": "TELEGRAM"
-                                },
-                                {
-                                  "card": {
-                                    "title": texts[0].Nome,
-                                    "subtitle": texts[0].funcao,
-                                    "imageUri": texts[0].url,
-                                    "buttons": [
-                                      {
-                                        "text": "fggf"
-                                      }
-                                    ]
-                                  },
-                                  "platform": "TELEGRAM"
-                                },
-                                {
-                                  "card": {
-                                    "title": "dd",
-                                    "subtitle": "ss",
-                                    "imageUri": "dffd",
-                                    "buttons": [
-                                      {
-                                        "text": "ssaa"
-                                      }
-                                    ]
-                                  },
-                                  "platform": "TELEGRAM"
-                                },
-                                {
-                                  "text": {
-                                    "text": [
-                                      ""
-                                    ]
-                                  }
+                            "fulfillmentMessages": 
+                             [
+                             {
+                                 "text": {
+                                     "text": ["Aguarde um momento, estamos procurando os melhores prestadores pra você."]
                                 }
-                              ]
-                        //     [
-                        //     {
-                        //         "text": {
-                        //             "text": ["Aguarde um momento, estamos procurando os melhores prestadores pra você."]
-                        //         }
-                        //     },
-                        //     {
-                        //         "text": {
-                        //             "text": texts
-                        //         }
-                        //     },
-                        //     {
-                        //         "text": {
-                        //             "text": ["Aqui estão os prestadores que você pediu. Se precisar de mais alguma coisa, me avise."]
-                        //         }
-                        //     }
-                        //   ]  
+                             },
+                            {
+                                "text": {
+                                    "text": texts
+                                }
+                            },
+                           {
+                                "text": {
+                                    "text": ["Aqui estão os prestadores que você pediu. Se precisar de mais alguma coisa, me avise.","sjajsahsaa"]
+                                }
+                             }
+                           ]  
                           
                           
                         }
@@ -226,8 +186,10 @@ const router = express.Router();
 
        }else if(req.body.queryResult.intent.displayName=="Obra-feita-avaliacao - yes - select.number"){
 
+        //mocado
 
-        queryResult.parameters.number[0]
+
+        //queryResult.parameters.number[0]
 
 
        }else if(null){
