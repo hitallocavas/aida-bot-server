@@ -152,23 +152,78 @@ const router = express.Router();
 
                     res.send(
                         
-                        {"fulfillmentMessages": [
+                        {
+                        //     "fulfillmentMessages": [
+                        //     {
+                        //         "text": {
+                        //             "text": ["Aguarde um momento, estamos procurando os melhores prestadores pra você."]
+                        //         }
+                        //     },
+                        //     {
+                        //         "text": {
+                        //             "text": texts
+                        //         }
+                        //     },
+                        //     {
+                        //         "text": {
+                        //             "text": ["Aqui estão os prestadores que você pediu. Se precisar de mais alguma coisa, me avise."]
+                        //         }
+                        //     }
+                        //   ]  
+                          
+
+                        [
                             {
-                                "text": {
-                                    "text": ["Aguarde um momento, estamos procurando os melhores prestadores pra você."]
-                                }
+                              "text": {
+                                "text": [
+                                  texts
+                                ]
+                              },
+                              "platform": "TELEGRAM"
                             },
                             {
-                                "text": {
-                                    "text": texts
-                                }
+                              "text": {
+                                "text": [
+                                  "gfgdfgdfgdfg"
+                                ]
+                              },
+                              "platform": "TELEGRAM"
                             },
                             {
-                                "text": {
-                                    "text": ["Aqui estão os prestadores que você pediu. Se precisar de mais alguma coisa, me avise."]
-                                }
+                              "card": {
+                                "title": "fd",
+                                "subtitle": "fgf",
+                                "imageUri": "fgf",
+                                "buttons": [
+                                  {
+                                    "text": "fggf"
+                                  }
+                                ]
+                              },
+                              "platform": "TELEGRAM"
+                            },
+                            {
+                              "card": {
+                                "title": "dd",
+                                "subtitle": "ss",
+                                "imageUri": "dffd",
+                                "buttons": [
+                                  {
+                                    "text": "ssaa"
+                                  }
+                                ]
+                              },
+                              "platform": "TELEGRAM"
+                            },
+                            {
+                              "text": {
+                                "text": [
+                                  ""
+                                ]
+                              }
                             }
-                          ]   
+                          ]
+                          
                         }
                     );
    
@@ -176,6 +231,7 @@ const router = express.Router();
             )
         }
         catch(err){
+
             return res.status(400).send({err});   
         }
 
