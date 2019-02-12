@@ -145,7 +145,7 @@ const router = express.Router();
                     }
 
                     prestadores.forEach(function(prestador){
-                        texts.push("Nome: "+prestador.name + "\n" +"Portfólio: "+prestador.UrlPerfil+"\n" +"Contato: "+prestador.telefone);
+                        texts.push("Nome: "+prestador.name + "\n" +"Portfólio: "+prestador.UrlPerfil+"\n" +"Contato: "+prestador.telefone+"\n");
                     })
 
                     //enviar mensagens
