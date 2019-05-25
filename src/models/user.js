@@ -6,9 +6,9 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    email:{
+    email: {
         type: String,
-        unique:true,
+        unique: true,
         required: true,
         lowercase: true,
     },
@@ -17,20 +17,17 @@ const UserSchema = new mongoose.Schema({
         required: true,
         select: false,
     },
-    createAt:{
+    createAt: {
         type: Date,
         default: Date.now,
     },
 });
 
-
-
-// UserSchema.pre('save', async function (next) {
-
-// const hash = await bcrypt.hash(this.password, 10);
-// this.password = hash;
-// next();
-// })
+UserSchema.pre('save', async function (next) {
+    const hash = await bcrypt.hash(this.password, 18);
+    this.password = hash;
+    next();
+});
 
 const User = mongoose.model('User', UserSchema);
 
