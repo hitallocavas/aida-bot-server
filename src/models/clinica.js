@@ -1,8 +1,8 @@
 const mongoose = require('../database/index');
 const bcrypt = require('bcryptjs');
 
-const ClienteSchema = new mongoose.Schema({
-    name: {
+const ClinicaSchema = new mongoose.Schema({
+    nome: {
         type: String,
         require: true,
     },
@@ -12,39 +12,21 @@ const ClienteSchema = new mongoose.Schema({
         required: true,
         lowercase: true,
     },
-    endereco: {
+    login:{
+        type: String,
+        unique:true,
+        required: true,
+        lowercase: true,
+    },
+    senha:{
+        type: String,
+        required: true,
+    },
+    telefone: {
         type: String,
         require: false,
     },
     fotoPerfil:{
-        type: String,
-        required: false,
-    },
-    telefone: {
-        type: String,
-        required: true,
-    },
-    descProjeto: {
-        type: String,
-        require: true,
-    },
-    createAt:{
-        type: Date,
-        default: Date.now,
-    },
-    obras:{
-        type: String,
-        required: true,
-    },
-    orcamento:{
-        type: Number,
-        required:true,
-    },
-    prazo: {
-        type: String,
-        required: true,
-    },
-    visitasAgendadas: {
         type: String,
         required: false,
     }
@@ -59,6 +41,6 @@ const ClienteSchema = new mongoose.Schema({
 // next();
 // })
 
-const Cliente = mongoose.model('Cliente', ClienteSchema);
+const Clinica = mongoose.model('Clinica', ClinicaSchema);
 
-module.exports = Cliente;
+module.exports = Clinica;
